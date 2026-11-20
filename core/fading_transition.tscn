@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://0m4k4dhua4w7"]
+
+[ext_resource type="Texture2D" uid="uid://dhl0kjefxk7ih" path="res://assets/ui/kenney_circle_02.png" id="1_5c2le"]
+
+[sub_resource type="GDScript" id="GDScript_f8rml"]
+script/source = "extends CanvasLayer
+
+signal transition_ready
+
+@onready var progress_circle: TextureProgressBar = %Circle
+@onready var player: AnimationPlayer = $AnimationPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	await player.animation_finished
+	transition_ready.emit()
+	player.play(\"spin\")
+
+
+func _on_load_finished() -> void:
+	player.play_backwards(\"fade\")
+	await player.animation_finished
+	queue_free()
+
+
+func _on_progress_changed(progress: float) -> void:
+	progress_circle.value = progress
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0ya7"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_dhs3m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.15, 0.15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Circle:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qpdgf"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Circle:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qxpf0"]
+resource_name = "spin"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.02, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.15, 0.15), Vector2(0.2, 0.2), Vector2(0.15, 0.15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qpdgf"]
+_data = {
+&"RESET": SubResource("Animation_dhs3m"),
+&"fade": SubResource("Animation_qpdgf"),
+&"spin": SubResource("Animation_qxpf0")
+}
+
+[node name="FadingTransition" type="CanvasLayer" unique_id=1798160720]
+layer = 100
+script = SubResource("GDScript_f8rml")
+
+[node name="Panel" type="Panel" parent="." unique_id=943605609]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u0ya7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Circle" type="TextureProgressBar" parent="." unique_id=1204063561]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.15, 0.15)
+pivot_offset = Vector2(256, 256)
+fill_mode = 4
+texture_progress = ExtResource("1_5c2le")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1055968052]
+libraries/ = SubResource("AnimationLibrary_qpdgf")
+autoplay = &"fade"

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dsj1prhw0wb0w"]
+
+[ext_resource type="Script" uid="uid://bsp5ble2xihal" path="res://debug/editor_warnings.gd" id="1_frk4m"]
+
+[node name="EditorWarnings" type="Node2D" unique_id=144456749]
+script = ExtResource("1_frk4m")

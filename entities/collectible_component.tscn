@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ccto66whqn56f"]
+
+[ext_resource type="Script" uid="uid://5uyg4d62s3l1" path="res://entities/collectible_component.gd" id="1_mtn84"]
+[ext_resource type="Texture2D" uid="uid://byaejlormsrx1" path="res://assets/sprites/collectibles/gemstone.png" id="1_y1c0e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mks88"]
+radius = 7.0
+
+[node name="CollectibleComponent" type="Node2D" unique_id=499911800 groups=["Collectibles"]]
+script = ExtResource("1_mtn84")
+metadata/_edit_group_ = true
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=781202988]
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1221049091]
+texture = ExtResource("1_y1c0e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1242856831]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_mks88")
+
+[connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]

@@ -1,0 +1,2 @@
+- Froglet character sprite by [LukasLundin](https://lukaslundin.itch.io/)
+- Peaceful nightfield spritesheet by [Trixie](https://trixelized.itch.io/)

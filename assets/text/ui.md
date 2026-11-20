@@ -1,0 +1,4 @@
+- Scrambled Eggs font by [VEXED]](https://v3x3d.itch.io/)
+- Universal UI/Menu Soundpack by [Ellr](https://ellr.itch.io/)
+- Audune Prompts by [Audune Games](https://audune.itch.io/)
+- Kyrise's Free 16x16 RPG Icon Pack by [Kyrise](https://kyrise.itch.io)

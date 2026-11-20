@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cxdcdaid2xr6b"]
+
+[node name="MovementRef" type="Node" unique_id=2053187996]
+
+[node name="JumpHeight" type="ColorRect" parent="." unique_id=316127534]
+offset_right = 40.0
+offset_bottom = 96.0
+
+[node name="JumpDistance" type="ColorRect" parent="." unique_id=1714334950]
+offset_top = 72.0
+offset_right = 112.0
+offset_bottom = 96.0

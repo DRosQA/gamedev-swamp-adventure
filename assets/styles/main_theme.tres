@@ -1,0 +1,72 @@
+[gd_resource type="Theme" format=3 uid="uid://va163udheh38"]
+
+[ext_resource type="StyleBox" uid="uid://dgj8casoq7uhr" path="res://assets/styles/disabled_button.tres" id="1_yaxyg"]
+[ext_resource type="StyleBox" uid="uid://m031fi6uqr8r" path="res://assets/styles/button.tres" id="2_xn3vi"]
+[ext_resource type="StyleBox" uid="uid://b3b3wkpv4qnpi" path="res://assets/styles/hover_button.tres" id="3_i085w"]
+[ext_resource type="StyleBox" uid="uid://67r7dg8mk3nm" path="res://assets/styles/pressed_button.tres" id="4_sm3vc"]
+[ext_resource type="StyleBox" uid="uid://bgasdj2hocjo" path="res://assets/styles/progress.tres" id="5_ju3w6"]
+[ext_resource type="StyleBox" uid="uid://4gceo587leu3" path="res://assets/styles/progress_highlight.tres" id="6_tblbv"]
+[ext_resource type="StyleBox" uid="uid://c7lir7vugol0u" path="res://assets/styles/overlay_rect.tres" id="7_gx2rn"]
+[ext_resource type="StyleBox" uid="uid://dnxiyw13jqwjl" path="res://assets/styles/progress_bg.tres" id="8_uymc8"]
+[ext_resource type="StyleBox" uid="uid://xd4rpmj0t3p0" path="res://assets/styles/disabled_tab.tres" id="9_qqxrj"]
+[ext_resource type="StyleBox" uid="uid://cnhy1y3r8erp6" path="res://assets/styles/hover_tab.tres" id="10_onwj7"]
+[ext_resource type="StyleBox" uid="uid://b0ittrv8fqloq" path="res://assets/styles/selected_tab.tres" id="11_mwvu8"]
+[ext_resource type="StyleBox" uid="uid://ta30evnpr67n" path="res://assets/styles/tab.tres" id="12_p38p8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pwtgf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3rrw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dqkk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48xj2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_whhmt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yedic"]
+
+[resource]
+Button/colors/font_color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+Button/colors/font_disabled_color = Color(0.9490196, 0.8627451, 0.41960785, 1)
+Button/colors/font_hover_color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+Button/colors/font_hover_pressed_color = Color(0.40784314, 0.7490196, 0.06666667, 1)
+Button/colors/font_outline_color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+Button/colors/font_pressed_color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+Button/styles/disabled = ExtResource("1_yaxyg")
+Button/styles/focus = ExtResource("2_xn3vi")
+Button/styles/hover = ExtResource("3_i085w")
+Button/styles/normal = ExtResource("2_xn3vi")
+Button/styles/pressed = ExtResource("4_sm3vc")
+HBoxContainer/constants/separation = 4
+HScrollBar/styles/grabber = ExtResource("5_ju3w6")
+HScrollBar/styles/grabber_highlight = ExtResource("6_tblbv")
+HSlider/styles/grabber_area = ExtResource("5_ju3w6")
+HSlider/styles/grabber_area_highlight = ExtResource("6_tblbv")
+ItemList/colors/font_color = Color(1, 1, 1, 1)
+ItemList/colors/font_hovered_color = Color(0.9490196, 0.8627451, 0.41960785, 1)
+ItemList/styles/focus = SubResource("StyleBoxEmpty_pwtgf")
+ItemList/styles/hovered = SubResource("StyleBoxEmpty_g3rrw")
+ItemList/styles/hovered_selected = SubResource("StyleBoxEmpty_8dqkk")
+ItemList/styles/hovered_selected_focus = SubResource("StyleBoxEmpty_48xj2")
+ItemList/styles/panel = SubResource("StyleBoxEmpty_whhmt")
+ItemList/styles/selected = SubResource("StyleBoxEmpty_yedic")
+Label/colors/font_color = Color(1, 0.9647059, 0.78431374, 1)
+Label/colors/font_outline_color = Color(0, 0.09019608, 0.11764706, 1)
+Label/colors/font_shadow_color = Color(0.26666668, 0.1882353, 0.14509805, 1)
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+PanelContainer/styles/panel = ExtResource("7_gx2rn")
+ProgressBar/styles/background = ExtResource("8_uymc8")
+ProgressBar/styles/fill = ExtResource("5_ju3w6")
+TabContainer/colors/font_hovered_color = Color(0.40784314, 0.7490196, 0.06666667, 1)
+TabContainer/colors/font_selected_color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+TabContainer/colors/font_unselected_color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+TabContainer/constants/tab_separation = 10
+TabContainer/styles/panel = ExtResource("5_ju3w6")
+TabContainer/styles/tab_disabled = ExtResource("9_qqxrj")
+TabContainer/styles/tab_focus = ExtResource("10_onwj7")
+TabContainer/styles/tab_hovered = ExtResource("10_onwj7")
+TabContainer/styles/tab_selected = ExtResource("11_mwvu8")
+TabContainer/styles/tab_unselected = ExtResource("12_p38p8")

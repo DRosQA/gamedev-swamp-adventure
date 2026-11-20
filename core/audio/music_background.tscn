@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cuatsxsgmhvbv"]
-
-[ext_resource type="AudioStream" uid="uid://cdlgnibaaveat" path="res://assets/audio/mcleod_doobly_doo.mp3" id="1_dmn4e"]
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" unique_id=28891192]
-stream = ExtResource("1_dmn4e")
-autoplay = true
-bus = &"Music"

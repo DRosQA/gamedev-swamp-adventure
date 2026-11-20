@@ -1,0 +1,322 @@
+[gd_scene format=3 uid="uid://dqbue8swtynn7"]
+
+[ext_resource type="Script" uid="uid://bgdfx7t6ffjht" path="res://ui/main_menu_component.gd" id="1_whhmt"]
+[ext_resource type="Texture2D" uid="uid://bmemcl3fj0pfc" path="res://assets/background/parallax_forest_middle.png" id="3_p0odq"]
+[ext_resource type="Texture2D" uid="uid://b0kgfgevqjdea" path="res://assets/background/parallax_forest_light.png" id="4_1nt8d"]
+[ext_resource type="Texture2D" uid="uid://cv5fyokkct2m4" path="res://assets/background/parallax_forest_front.png" id="5_swfpx"]
+[ext_resource type="Script" uid="uid://dbap0gqox0ty1" path="res://addons/markdownlabel/markdownlabel.gd" id="5_sx51y"]
+[ext_resource type="Script" uid="uid://dcx7crs23nf4" path="res://addons/markdownlabel/header_formats/h1_format.gd" id="6_ho8vd"]
+[ext_resource type="Script" uid="uid://d0sin64i4v3op" path="res://addons/markdownlabel/header_formats/h2_format.gd" id="7_ov64x"]
+[ext_resource type="Script" uid="uid://dlok0dv1tq2bf" path="res://addons/markdownlabel/header_formats/h3_format.gd" id="8_or0lj"]
+[ext_resource type="Script" uid="uid://bayuh2vafablg" path="res://addons/markdownlabel/header_formats/h4_format.gd" id="9_g20e3"]
+[ext_resource type="Script" uid="uid://dfr1w7u3jgni3" path="res://addons/markdownlabel/header_formats/h5_format.gd" id="10_ci80l"]
+[ext_resource type="Script" uid="uid://bsi6dexoofpe6" path="res://addons/markdownlabel/header_formats/h6_format.gd" id="11_1crfl"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_1nt8d"]
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_1nt8d"]
+events = [SubResource("InputEventKey_1nt8d")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_swfpx"]
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_swfpx"]
+events = [SubResource("InputEventKey_swfpx")]
+
+[sub_resource type="Resource" id="Resource_ho8vd"]
+resource_local_to_scene = true
+script = ExtResource("6_ho8vd")
+
+[sub_resource type="Resource" id="Resource_ov64x"]
+resource_local_to_scene = true
+script = ExtResource("7_ov64x")
+
+[sub_resource type="Resource" id="Resource_or0lj"]
+resource_local_to_scene = true
+script = ExtResource("8_or0lj")
+
+[sub_resource type="Resource" id="Resource_g20e3"]
+resource_local_to_scene = true
+script = ExtResource("9_g20e3")
+
+[sub_resource type="Resource" id="Resource_ci80l"]
+resource_local_to_scene = true
+script = ExtResource("10_ci80l")
+
+[sub_resource type="Resource" id="Resource_1crfl"]
+resource_local_to_scene = true
+script = ExtResource("11_1crfl")
+
+[node name="MenuMain" type="Control" unique_id=1022701860]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_whhmt")
+dev_credits = "res://assets/text/dev.md"
+audio_credits = "res://assets/text/audio.md"
+sprite_credits = "res://assets/text/sprites.md"
+art_credits = "res://assets/text/art.md"
+ui_credits = "res://assets/text/ui.md"
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Control" parent="." unique_id=1467979125]
+anchors_preset = 0
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="TreesBack" type="TextureRect" parent="Background" unique_id=1858684693]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("3_p0odq")
+
+[node name="LightRays" type="TextureRect" parent="Background" unique_id=652073592]
+modulate = Color(1, 1, 1, 0.3882353)
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("4_1nt8d")
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=704264085]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("5_swfpx")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=576232048]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1298862019]
+layout_mode = 2
+
+[node name="TitlePanel" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=438622117]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/TitlePanel" unique_id=116485183]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "title"
+horizontal_alignment = 1
+vertical_alignment = 3
+uppercase = true
+
+[node name="Menu" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=841496960]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="MenuButtons" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Menu" unique_id=1122241293]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/Menu/MenuButtons" unique_id=1370306011]
+layout_mode = 2
+size_flags_vertical = 4
+shortcut = SubResource("Shortcut_1nt8d")
+text = "NEW GAME"
+
+[node name="LoadButton" type="Button" parent="MarginContainer/VBoxContainer/Menu/MenuButtons" unique_id=1713523643]
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "coming soon"
+disabled = true
+text = "LOAD"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/Menu/MenuButtons" unique_id=1100014201]
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "coming soon"
+disabled = true
+text = "OPTIONS"
+
+[node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer/Menu/MenuButtons" unique_id=1738638140]
+layout_mode = 2
+text = "CREDITS"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/Menu/MenuButtons" unique_id=256444820]
+layout_mode = 2
+shortcut = SubResource("Shortcut_swfpx")
+text = "QUIT"
+
+[node name="CreditsOverlay" type="PanelContainer" parent="." unique_id=434422712]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CreditsOverlay" unique_id=1020128374]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsOverlay/MarginContainer" unique_id=810304283]
+layout_mode = 2
+
+[node name="TitlePanel" type="PanelContainer" parent="CreditsOverlay/MarginContainer/VBoxContainer" unique_id=1428784699]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TitleLabel" type="Label" parent="CreditsOverlay/MarginContainer/VBoxContainer/TitlePanel" unique_id=90888587]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 3
+uppercase = true
+
+[node name="AINoticeLabel" type="Label" parent="CreditsOverlay/MarginContainer/VBoxContainer" unique_id=1396601326]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "This game is 100% organic, AI free, entirely made by humans."
+horizontal_alignment = 1
+vertical_alignment = 3
+autowrap_mode = 3
+justification_flags = 227
+
+[node name="NoticeLabel" type="Label" parent="CreditsOverlay/MarginContainer/VBoxContainer" unique_id=1039041349]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "(underlined text in these lists is a link to the creator)"
+horizontal_alignment = 1
+
+[node name="Credits" type="TabContainer" parent="CreditsOverlay/MarginContainer/VBoxContainer" unique_id=1025651584]
+layout_mode = 2
+size_flags_vertical = 3
+tab_alignment = 1
+current_tab = 0
+
+[node name="Dev" type="MarginContainer" parent="CreditsOverlay/MarginContainer/VBoxContainer/Credits" unique_id=46451730]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Dev" type="RichTextLabel" parent="CreditsOverlay/MarginContainer/VBoxContainer/Credits/Dev" unique_id=327166651]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+script = ExtResource("5_sx51y")
+markdown_text = "placeholder"
+h1 = SubResource("Resource_ho8vd")
+h2 = SubResource("Resource_ov64x")
+h3 = SubResource("Resource_or0lj")
+h4 = SubResource("Resource_g20e3")
+h5 = SubResource("Resource_ci80l")
+h6 = SubResource("Resource_1crfl")
+metadata/_custom_type_script = "uid://dbap0gqox0ty1"
+
+[node name="Audio" type="MarginContainer" parent="CreditsOverlay/MarginContainer/VBoxContainer/Credits" unique_id=1843086703]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Audio" type="RichTextLabel" parent="CreditsOverlay/MarginContainer/VBoxContainer/Credits/Audio" unique_id=469906733]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+script = ExtResource("5_sx51y")
+markdown_text = "placeholder"
+h1 = SubResource("Resource_ho8vd")
+h2 = SubResource("Resource_ov64x")
+h3 = SubResource("Resource_or0lj")
+h4 = SubResource("Resource_g20e3")
+h5 = SubResource("Resource_ci80l")
+h6 = SubResource("Resource_1crfl")
+metadata/_custom_type_script = "uid://dbap0gqox0ty1"
+
+[node name="Sprites" type="MarginContainer" parent="CreditsOverlay/MarginContainer/VBoxContainer/Credits" unique_id=1077320486]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Sprites" type="RichTextLabel" parent="CreditsOverlay/MarginContainer/VBoxContainer/Credits/Sprites" unique_id=830941234]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+script = ExtResource("5_sx51y")
+markdown_text = "placeholder"
+h1 = SubResource("Resource_ho8vd")
+h2 = SubResource("Resource_ov64x")
+h3 = SubResource("Resource_or0lj")
+h4 = SubResource("Resource_g20e3")
+h5 = SubResource("Resource_ci80l")
+h6 = SubResource("Resource_1crfl")
+metadata/_custom_type_script = "uid://dbap0gqox0ty1"
+
+[node name="Art" type="MarginContainer" parent="CreditsOverlay/MarginContainer/VBoxContainer/Credits" unique_id=1660411237]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Art" type="RichTextLabel" parent="CreditsOverlay/MarginContainer/VBoxContainer/Credits/Art" unique_id=133850991]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+script = ExtResource("5_sx51y")
+markdown_text = "placeholder"
+h1 = SubResource("Resource_ho8vd")
+h2 = SubResource("Resource_ov64x")
+h3 = SubResource("Resource_or0lj")
+h4 = SubResource("Resource_g20e3")
+h5 = SubResource("Resource_ci80l")
+h6 = SubResource("Resource_1crfl")
+metadata/_custom_type_script = "uid://dbap0gqox0ty1"
+
+[node name="UI elements" type="MarginContainer" parent="CreditsOverlay/MarginContainer/VBoxContainer/Credits" unique_id=1231815932]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="UI" type="RichTextLabel" parent="CreditsOverlay/MarginContainer/VBoxContainer/Credits/UI elements" unique_id=1067298544]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+script = ExtResource("5_sx51y")
+markdown_text = "placeholder"
+h1 = SubResource("Resource_ho8vd")
+h2 = SubResource("Resource_ov64x")
+h3 = SubResource("Resource_or0lj")
+h4 = SubResource("Resource_g20e3")
+h5 = SubResource("Resource_ci80l")
+h6 = SubResource("Resource_1crfl")
+metadata/_custom_type_script = "uid://dbap0gqox0ty1"
+
+[node name="BackButton" type="Button" parent="CreditsOverlay/MarginContainer/VBoxContainer" unique_id=1264590520]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "BACK"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/MenuButtons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/MenuButtons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu/MenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="meta_clicked" from="CreditsOverlay/MarginContainer/VBoxContainer/Credits/Dev/Dev" to="." method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="CreditsOverlay/MarginContainer/VBoxContainer/Credits/Audio/Audio" to="." method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="CreditsOverlay/MarginContainer/VBoxContainer/Credits/Sprites/Sprites" to="." method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="CreditsOverlay/MarginContainer/VBoxContainer/Credits/Art/Art" to="." method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="CreditsOverlay/MarginContainer/VBoxContainer/Credits/UI elements/UI" to="." method="_on_meta_clicked"]
+[connection signal="pressed" from="CreditsOverlay/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

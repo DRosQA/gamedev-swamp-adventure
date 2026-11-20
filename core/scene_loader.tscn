@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bm5omqtoijapl"]
+
+[ext_resource type="Script" uid="uid://b0spucqk84akb" path="res://core/scene_loader.gd" id="1_rfg5i"]
+
+[node name="SceneLoader" type="Node" unique_id=1788396139]
+script = ExtResource("1_rfg5i")
