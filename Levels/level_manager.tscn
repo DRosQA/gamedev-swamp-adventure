@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://csyexbnr7xvq2"]
+[gd_scene format=3 uid="uid://csyexbnr7xvq2"]
 
-[ext_resource type="Script" path="res://Levels/level_manager.gd" id="1_u58oo"]
-[ext_resource type="PackedScene" uid="uid://cinplacj8g5ol" path="res://transitions.tscn" id="2_unbuo"]
-[ext_resource type="PackedScene" uid="uid://chuoj2iq823lr" path="res://player_frog.tscn" id="3_v665t"]
+[ext_resource type="Script" uid="uid://cpvtl3c48m6q" path="res://levels/level_manager.gd" id="1_k4541"]
+[ext_resource type="PackedScene" uid="uid://cinplacj8g5ol" path="res://ui/transitions.tscn" id="2_ce4gc"]
+[ext_resource type="PackedScene" uid="uid://chuoj2iq823lr" path="res://core/player/player_frog.tscn" id="3_6qk6f"]
 
-[node name="Level_manager" type="Node2D"]
-script = ExtResource("1_u58oo")
+[node name="Level_manager" type="Node2D" unique_id=1894433018]
+script = ExtResource("1_k4541")
 
-[node name="Transitions" parent="." instance=ExtResource("2_unbuo")]
+[node name="Transitions" parent="." unique_id=1026009329 instance=ExtResource("2_ce4gc")]
 
-[node name="Player_frog" parent="." instance=ExtResource("3_v665t")]
+[node name="Player_frog" parent="." unique_id=390333627 instance=ExtResource("3_6qk6f")]
 position = Vector2(128, 224)
 
-[node name="CurrentScene" type="Control" parent="."]
+[node name="CurrentScene" type="Control" parent="." unique_id=1635995995]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -20,5 +20,3 @@ offset_bottom = 40.0
 
 [connection signal="score_changed" from="." to="Player_frog" method="_on_level_manager_score_changed"]
 [connection signal="transitioned" from="Transitions" to="." method="_on_transitions_transitioned"]
-[connection signal="died" from="Player_frog" to="." method="_on_player_frog_died"]
-[connection signal="end_level" from="Player_frog" to="." method="_on_player_frog_end_level"]

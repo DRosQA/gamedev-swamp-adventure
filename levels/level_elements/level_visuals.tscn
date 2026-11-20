@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bjd1up82nlmc0"]
+
+[ext_resource type="PackedScene" uid="uid://cd3os75oofcar" path="res://levels/level_elements/parallax_background.tscn" id="1_dmnmv"]
+[ext_resource type="PackedScene" uid="uid://cbk1gte42ynd2" path="res://levels/level_elements/tile_map.tscn" id="2_fc4kw"]
+[ext_resource type="PackedScene" uid="uid://cgupcqkw8a57y" path="res://levels/level_elements/tile_map_2.tscn" id="3_htt11"]
+
+[node name="LevelVisuals" type="Node" unique_id=1985657590]
+
+[node name="ParallaxBackground" parent="." unique_id=504554231 instance=ExtResource("1_dmnmv")]
+
+[node name="TileMap2" parent="." unique_id=1060915002 instance=ExtResource("3_htt11")]
+
+[node name="TileMap" parent="." unique_id=481097593 instance=ExtResource("2_fc4kw")]

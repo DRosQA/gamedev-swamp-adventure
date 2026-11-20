@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cge4pxw21iopg"]
+
+[ext_resource type="PackedScene" uid="uid://bp6rumle0o16c" path="res://ui/menus/main_menu.tscn" id="1_l5dte"]
+[ext_resource type="PackedScene" uid="uid://chuoj2iq823lr" path="res://core/player/player_frog.tscn" id="2_eywbl"]
+[ext_resource type="PackedScene" uid="uid://csyexbnr7xvq2" path="res://levels/level_manager.tscn" id="3_rnpjr"]
+[ext_resource type="PackedScene" uid="uid://bx7hehr6vivwp" path="res://levels/levels/level_1.tscn" id="4_mscmx"]
+[ext_resource type="PackedScene" uid="uid://dsgj75mtflqaq" path="res://levels/levels/level_2.tscn" id="5_qk033"]
+[ext_resource type="PackedScene" uid="uid://bpumjkmhdxs6e" path="res://levels/levels/level_3.tscn" id="6_a0xns"]
+[ext_resource type="PackedScene" uid="uid://bjd1up82nlmc0" path="res://levels/level_elements/level_visuals.tscn" id="7_f6dh7"]
+[ext_resource type="PackedScene" uid="uid://cuatsxsgmhvbv" path="res://core/audio/music_background.tscn" id="8_lnfyw"]
+
+[node name="root" type="Node" unique_id=737298946]
+
+[node name="UI" type="Node" parent="." unique_id=1546191795]
+
+[node name="MainMenu" parent="UI" unique_id=11206266 instance=ExtResource("1_l5dte")]
+
+[node name="Game" type="Node" parent="." unique_id=586811507]
+
+[node name="Player_frog" parent="Game" unique_id=2049559179 instance=ExtResource("2_eywbl")]
+
+[node name="Levels" parent="Game" unique_id=2011457251 instance=ExtResource("3_rnpjr")]
+
+[node name="Level1" parent="Game/Levels" unique_id=1536275916 instance=ExtResource("4_mscmx")]
+
+[node name="Level2" parent="Game/Levels" unique_id=998418169 instance=ExtResource("5_qk033")]
+
+[node name="Level3" parent="Game/Levels" unique_id=245333913 instance=ExtResource("6_a0xns")]
+
+[node name="LevelVisuals" parent="Game" unique_id=40282364 instance=ExtResource("7_f6dh7")]
+
+[node name="BackgroundMusic" parent="Game" unique_id=1619296838 instance=ExtResource("8_lnfyw")]

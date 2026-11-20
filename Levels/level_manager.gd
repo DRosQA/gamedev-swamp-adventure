@@ -30,7 +30,7 @@ func _ready():
 	
 
 func load_level(level):
-	var level_path = "res://Levels/level_" + str(level) + ".tscn"
+	var level_path = "res://levels/levels/level_" + str(level) + ".tscn"
 	var level_scene = load(level_path)
 	var level_instance = level_scene.instantiate()
 	$CurrentScene.add_child(level_instance)
@@ -66,7 +66,3 @@ func collected_gem():
 	gems_collected += 1
 	score = gems_collected
 	score_changed.emit(gems_collected)
-
-
-
-
